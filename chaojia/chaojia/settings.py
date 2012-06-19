@@ -2,6 +2,13 @@
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+SESSION_ENGINE = 'redis_sessions.session'
+SESSION_REDIS_HOST = 'localhost'
+SESSION_REDIS_PORT = 6379
+SESSION_REDIS_DB = 0
+SESSION_REDIS_PASSWORD = ''
+SESSION_REDIS_PREFIX = 'session'
+
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -23,6 +30,7 @@ import os
 STATIC_PATH = os.path.join(os.path.dirname(__file__))
 PROJECT_PATH = os.path.realpath(os.path.dirname(__file__)).split("/")[:-1]
 PROJECT_PATH = "/".join(PROJECT_PATH)
+
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
